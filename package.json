@@ -1,0 +1,52 @@
+{
+  "name": "Readit",
+  "version": "1.0.0",
+  "description": "Todo list with webpages.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "mac": "electron-builder -m",
+    "win": "electron-builder -w",
+    "build": "electron-builder -mwl",
+    "make-cert": "electron-builder create-self-signed-cert -p readit"
+  },
+  "build": {
+    "appId": "com.igorcosta.readit",
+    "directories": {
+      "buildResources": "."
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "certificateFile": "private/readit.pfx",
+      "verifyUpdateCodeSignature": false,
+      "publisherName": "readit"
+    },
+    "linux": {
+      "category": "Network"
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Igor Costa",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0"
+  },
+  "dependencies": {
+    "bulma": "0.3.1",
+    "electron-reload": "^1.4.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
+    "query-string": "^6.5.0"
+  }
+}
